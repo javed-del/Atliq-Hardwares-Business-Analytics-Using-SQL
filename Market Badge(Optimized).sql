@@ -1,5 +1,4 @@
 select market,
-Qty_Sold,
 GetSalesBadge(market,Qty_Sold) as Badge
 from (
 SELECT market, 
@@ -12,4 +11,3 @@ left join fact_gross_price FGP
 on FGP.product_code = FSM.product_code  
 and FGP.fiscal_year = DD.fiscal_year 
 group by market) Q1 
-
